@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Confirm it</title>
+	<link rel="stylesheet" type="text/css" href="confirmit.css">
+</head>
+<body>
+
+<a href="#" id="button">Confirm it</a>
+
+<!-- <script src="./confirmit.jquery.js"></script> -->
+<script src="./confirmit.js"></script>
+<script>
+	var button = document.getElementById('button');
+
+	button.addEventListener('click',function(e) {
+		e.preventDefault();
+
+		confirmit({
+			'message' : 'Lorem ipsum dolor sit amet?',
+			'allow' : 'Ok',
+			'disallow' : 'Cancel'
+		}, function(e) {
+			console.log((e) ? 'Ok' : 'Cancel');
+		});
+	});
+</script>
+
+</body>
+</html>
